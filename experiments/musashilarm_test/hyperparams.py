@@ -1,0 +1,183 @@
+# To get started, copy over hyperparams from another experiment.
+# Visit rll.berkeley.edu/gps/hyperparams.html for documentation.
+""" Hyperparameters for MJC musashi peg in hole policy optimization"""
+
+from __future__ import division
+
+from datatime import datetime
+import os.path
+
+import numpy as np
+
+from gps import __file__ as gps_filepath
+from gps.agent.mjc.agent_mjc import AgentMuJoCo
+from gps.algorithm.algorithm_badmm import AlgorithmBADMM
+from gps.algorithm.cost.cost_fk import CostFK
+from gps.algorithm.cost.cost_action import CostAction
+from gps.algorithm.cost.cost_sum import CostSum
+from gps.algorithm.cost.cost_utils import RAMP_FIANL_ONLY
+from gps.algorithm.dynamics.dynamics_lr_prioir import DynamicsLRPrior
+from gps.algorithm.dynamics.dynamics_prior_gmm import DynamicsPriorGMM
+from gps.algorithm.traj_opt.traj_opt_lqr_python import TrajOptLQRPython
+from gps.algorithm.policy_opt.policy_opt_caffe import PolicyOptCaffe
+from gps.algorithm.policy.lin_gauss_init import init_lqr
+from gps.algorithm.policy.policy_prior_gmm import PolicyPriorGMM
+from gps.algorithm.policy.policy_prior import PolicyPrior
+from gps.algorithm.policy_opt.policy_opt_tf import PolicyOptTf
+from gps.algorithm.policy_opt.tf_model_example import tf_network
+from gps.proto.gps_pb2 import JOINT_ANGLES, JOINT_VELOCITIES, \
+        END_EFFECTOR_POINTS, END_EFFECTOR_POINT_VELOCITIES, ACTION
+from gps.gui.config import generate_experiment_info
+
+ALGORITHM_NN_LIBRARY = "tf"
+
+SENSOR_DIMS = {
+        JOINT_ANGLES: 7,
+        JOINT_VELOCITIES: 7,
+        END_EFFECTOR_POINTS: 6,
+        END_EFFECTOR_POINT_VELOCITIES: 6,
+        ACITON: 5, # shoulder 3 dims and elbow 3 dims
+        }
+
+## To be imporved
+MUSASHILARM_GAINS = np.array([3., 1., 0.4, 0.6, 0.1, 0.1])
+
+BASE_DIR = '/'.join(str.split(gps_filepath, '/')[:-2])
+EXP_DIR = BASE_DIR + '/../experiments/musashilarm_test/'
+
+common = {
+    'experiment_name': 'soliton_experiment' + '_' + \
+                datetime.strftime(datetime.now(), '%m~%d~%y_%H~%M'),
+    'experiment_dir': EXP_DIR,
+    'data_files_dir': EXP_DIR + 'data_files/',
+    'target_filenames': EXP_DIR + 'target.npz',
+    'log_filename': EXP_DIR + 'log.txt',
+    'condition': 4,
+        }
+
+if not os.path.exists(common['data_files_dir']):
+    os.makedirs(common['data_files_dir'])
+
+agent = {
+        'type':AgentMuJoCo,
+        'filename': '/home/rl-park/tendon_park/musashilarm/feedback_error_learning/musashilarm.xml'
+        'x0': np.contatenate([np.array([0, 0, 0, 0, 0, 0])], np.zeros(5)),
+        'dt': 0.05,
+        'substeps': 5,
+        'conditions': common['conditions'],
+        'pos_body_idx': np.array([1]),
+        #'pos_body_offset': [[np.array()]]
+        'T': 100,
+        'sensor_dims': SENSOR_DIMS,
+        'state_include': [JOINT_ANGLES, JOINT_VELOCITIES, END_EFFECTOR_POINTS,
+            END_EFFECTOR_POINT_VELOCITIES],
+        'obs_include': [JOINT_ANGLES, JOINT_VELOCITIES, END_EFFECTOR_POINTS,
+            END_EFFECTOR_POINT_VELOCITIES],
+        'camera_pos':np.array([0., 0., 2., 0., 0.2, 0.5]),
+}
+
+
+algorithm = {
+        'type': AlgorithmBADMM,
+        'conditions': common['conditions'],
+        'iterarions': 12,
+        'lq_step_shedule': np.array([1e-4, 1e-3, 1e-2, 1e-2]),
+        'policy_dual_rate': 0.1,
+        'init_pol_wt': 0.002,
+        'ent_reg_schedule': np.array([1e-3, 1e-3, 1e-2, 1e-1]),
+        'fixed_lq_step': 3,
+        'kl_step': 1.0,
+        'min_step_mult': 0.01,
+        'max_step_mult': 3.0,
+        'sample_decrease_var': 0.05,
+        'sample_increase_var': 0.1,
+        'policy_sample_mode': 'replace',
+        }
+
+algorithm['init_traj_distr'] = {
+    'type' :init_lqr,
+    'init_gains' : 1.0 / MUSASHILARM_GAINS,
+    'init_acc': np.zeros(SENSOR_DIMS[ACTION]),
+    'init_var': 1.0,
+    'stiffness': 1.0,
+    'stiffness_vel': 0.5,
+    'final_weight': 50.0,
+    'dt': agent['dt'],
+    'T': agent['T'],
+        }
+
+torque_cost = {
+        'type':CostAction,
+        'wu': 1e-3/MUSASHILARM_GAINS,
+        }
+
+fk_cost = {
+        'type': CostFK,
+        'target_end_effector': np.array([0.0, 0.0, 0.0, 0., ,])
+
+
+
+
+        }
+
+final_cost = {
+        'type':CostFK,
+        'ramp_option': RAMP_FINAL_ONLY,
+        'target_end_effector': fk_cost['target_end_effector'],
+        'wp': fk_cost['wp'],
+        'l1': 1.0,
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
