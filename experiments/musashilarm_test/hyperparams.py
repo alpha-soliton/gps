@@ -40,7 +40,7 @@ SENSOR_DIMS = {
         }
 
 ## To be imporved
-MUSASHILARM_GAINS = np.array([3., 1., 0.4, 0.6, 0.1, 0.1, 0.1, 0.1])
+MUSASHILARM_GAINS = np.array([0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1])
 
 BASE_DIR = '/'.join(str.split(gps_filepath, '/')[:-2])
 EXP_DIR = BASE_DIR + '/../experiments/musashilarm_test/'
@@ -61,7 +61,7 @@ if not os.path.exists(common['data_files_dir']):
 agent = {
         'type':AgentMuJoCo,
         'filename': './mjc_models/musashilarm.xml',
-        'x0': np.concatenate([np.array([0, 0, 0, 0, 0, 0]), np.zeros(5)]),
+        'x0': np.concatenate([np.array([0, 0, 0, 0, 0, 0, 0]), np.zeros(7)]),
         'dt': 0.05,
         'substeps': 5,
         'conditions': common['conditions'],
