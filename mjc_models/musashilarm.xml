@@ -33,33 +33,25 @@
         <mesh name="LARM_THUMB1_LINK_mesh" file="LARM_THUMB1_LINK_mesh.stl" />
     </asset>
     <worldbody>
+        <body name="base" pos="0 0 0.1">
         <geom type="mesh" mesh="LARM_SCAPULA_LINK_mesh" />
-        <geom name="LARM_SCAPULA_LINK" type="cylinder" fromto="0 0 0 0 0.28 0" size="0.015" rgba=".8 .6 .4 0"/>
             <body name="LARM_HUMERUS_DUMMY1_LINK" pos="0 0.193 0">
             <!--<body name="LARM_HUMERUS_DUMMY1_LINK" pos="0 0.193 0">-->
             <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
             <joint name="LARM_SHOULDER_JOINT_P" pos="0 0 0" axis="0 1 0" limited="true" range="-2.0944 0.785399" damping="0.2" type="hinge"/>
             <geom pos="0 0.193 0" type="mesh" mesh="LARM_HUMERUS_DUMMY1_LINK_mesh" />
-            <geom name="LARM_HUMERUS_DUMMY1_LINK" type="sphere" size="0.035" rgba=".8 .6 .4 0" pos="0 0.035 0"/>
             <body name="LARM_HUMERUS_DUMMY2_LINK" pos="0 0.039 0">
                 <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
                 <joint name="LARM_SHOULDER_JOINT_R" pos="0 0 0" axis="1 0 0" limited="true" range="-0.523599 2.0944" damping="0.2" type="hinge"/>
                 <geom pos="0 0.039 0" type="mesh" mesh="LARM_HUMERUS_DUMMY2_LINK_mesh" />
-                <geom name="LARM_HUMERUS_DUMMY2_LINK" type="cylinder" fromto="0 0 0.04 0 0 -0.08" size="0.025" rgba=".8 .6 .4 0"/>
-                <geom name="LARM_HUMERUS_DUMMY2_LINK_thin" type="cylinder" fromto="0 0 0.04 0 0 -0.08" size="0.015" rgba=".8 .6 .4 1"/>
                 <body name="LARM_HUMERUS_LINK" pos="0 0 -0.073">
                     <inertial pos="0.024 0.0021 -0.135" quat="0.820473 0.339851 -0.17592 0.424708" mass="2.19" diaginertia="0.001 0.001 0.001" />
                     <joint name="LARM_SHOULDER_JOINT_Y" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" damping="0.2" type="hinge"/>
                     <geom pos="0 0 -0.073" type="mesh" mesh="LARM_HUMERUS_LINK_mesh" />
-                    <geom name="LARM_HUMERUS_LINK" type="cylinder" size="0.05" fromto="-0.01 0 -0.02 -0.01 0 -0.15" rgba=".8 .6 .4 0"/>
                     <body name="LARM_FOREARM_DUMMY1_LINK" pos="0.004 0 -0.231">
                         <inertial pos="-0.008065 0 -0.146065" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.72" diaginertia="0.001 0.001 0.001" />
                         <joint name="LARM_ELBOW_JOINT_P" pos="0 0 0" axis="0 1 0" limited="true" range="-2.3562 0" damping="0.2" type="hinge"/>
                         <geom pos="0.004 0 -0.231" type="mesh" mesh="LARM_FOREARM_DUMMY1_LINK_mesh" />
-                        <geom name="LARM_FOREARM_DUMMY1_LINK" type="sphere" size="0.035" rgba=".8 .6 .4 0" pos="0 0 0"/>
-                        <geom name="LARM_FOREARM_DUMMY1_LINK_cylinder" type="cylinder" size="0.035" rgba=".8 .6 .4 0" fromto="0 0 0.03 0 0 -0.05"/>
-                        <geom name="LARM_FOREARM_DUMMY1_LINK_cylinder_thin" type="cylinder" size="0.025" rgba=".8 .6 .4 0" fromto="0 0 0 0 0 -0.05"/>
-                        <geom name="LARM_FOREARM_DUMMY1_LINK_cylinder_thin_thin" type="cylinder" size="0.02" rgba=".8 .6 .4 0" fromto="0 0 0 0 0 -0.05"/>
                         <body name="LARM_FOREARM_LINK" pos="0 0 -0.04">
                             <inertial pos="-0.003285 0 -0.13898" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.75" diaginertia="0.001 0.001 0.001" />
                             <joint name="LARM_ELBOW_JOINT_Y" pos="0 0 0" axis="0.104591 0 0.994515" limited="true" range="-1.5708 1.5708" damping="0.2" type="hinge"/>
@@ -68,12 +60,11 @@
                                 <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
                                 <joint name="LARM_WRIST_JOINT_P" pos="0 0 0" axis="0 1 0" limited="true" range="-0.7854 0.7854" damping="0.2" type="hinge"/>
                                 <geom pos="0 0 -0.191" type="mesh" mesh="LARM_HAND_DUMMY1_LINK_mesh" />
-                                <geom name="LARM_HAND_DUMMY1_LINK" type="sphere" size="0.035" rgba=".8 .6 .4 0" pos="0 0 0"/>
                                 <body name="LARM_HAND_LINK" pos="0 0 0">
                                     <inertial pos="0.01125 0 -0.03" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.192" diaginertia="0.001 0.001 0.001" />
                                     <joint name="LARM_WRIST_JOINT_R" pos="0 0 0" axis="1 0 0" limited="true" range="-1.309 1.309" damping="0.2" type="hinge"/>
                                     <geom type="mesh" mesh="LARM_HAND_LINK_mesh" />
-                                    <geom name="ball_geom" rgba="0.8 0.6 0.6 1" type="cylinder" fromto="-0.1 0 0 0.1 0 0" size="0.028" density="2000" contype="2" conaffinity="1" />
+                                    <geom name="ball_geom" rgba="0.8 0.6 0.6 1" type="cylinder" fromto="-0.1 0 -0.08 0.1 0 -0.08" size="0.015" density="2000" contype="2" conaffinity="1" />
                                     <site name="hand-end1" pos="0.0 0.0 0.0" size="0.005"/>
                                     <site name="hand-end2" pos="0.0 0.0 0.0" size="0.005"/>
                                     <body name="LARM_INDEX3_LINK" pos="0.0349544 -0.017 -0.100974">
@@ -147,7 +138,8 @@
                 </body>
             </body>
         </body>
-
+        </body>
+            
         <body name="g1" pos="0.334 0.3 -0.47" axisangle="0 1 0 0.05">
             <geom name="g1" rgba="0.2 0.2 0.2 1" type="box" size="0.003 0.01 0.05" contype="1" conaffinity="1" />
         </body>
