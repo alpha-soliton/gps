@@ -78,79 +78,63 @@
                                     <site name="hand-end2" pos="0.0 0.0 0.0" size="0.005"/>
                                     <body name="LARM_INDEX3_LINK" pos="0.0349544 -0.017 -0.100974">
                                         <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                        <joint name="LARM_INDEX3_JOINT_R" pos="0 0 0" axis="0.996195 0 0.0871557" limited="true" range="-1.5708 0" damping="0.2" type="hinge"/>
                                         <geom pos="0.0349544 -0.017 -0.100974" type="mesh" mesh="LARM_INDEX3_LINK_mesh" />
                                         <body name="LARM_INDEX2_LINK" pos="0.00348623 0 -0.0398478">
                                             <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                            <joint name="LARM_INDEX2_JOINT_R" pos="0 0 0" axis="0.996195 0 0.0871557" limited="true" range="-1.5708 0" damping="0.2" />
                                             <geom pos="0.00348623 0 -0.0398478" type="mesh" mesh="LARM_INDEX2_LINK_mesh" />
                                             <body name="LARM_INDEX1_LINK" pos="0.00261467 0 -0.0298858">
                                                 <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                                <joint name="LARM_INDEX1_JOINT_R" pos="0 0 0" axis="0.996195 0 0.0871557" limited="true" range="-1.5708 0" damping="0.2" />
                                                 <geom pos="0.00261467 0 -0.0298858" type="mesh" mesh="LARM_INDEX1_LINK_mesh" />
                                             </body>
                                         </body>
                                     </body>
                                     <body name="LARM_LITTLE3_LINK" pos="-0.0273876 -0.017 -0.098252">
                                         <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                        <joint name="LARM_LITTLE3_JOINT_R" pos="0 0 0" axis="0.984808 0 -0.173648" limited="true" range="-1.5708 0" damping="0.2" />
                                         <geom pos="-0.0273876 -0.017 -0.098252" type="mesh" mesh="LARM_LITTLE3_LINK_mesh" />
                                         <body name="LARM_LITTLE2_LINK" pos="-0.00520945 0 -0.0295442">
                                             <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                            <joint name="LARM_LITTLE2_JOINT_R" pos="0 0 0" axis="0.984808 0 -0.173648" limited="true" range="-1.5708 0" damping="0.2" />
                                             <geom pos="-0.00520945 0 -0.0295442" type="mesh" mesh="LARM_LITTLE2_LINK_mesh" />
                                             <body name="LARM_LITTLE1_LINK" pos="-0.00520945 0 -0.0295442">
                                                 <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                                <joint name="LARM_LITTLE1_JOINT_R" pos="0 0 0" axis="0.984808 0 -0.173648" limited="true" range="-1.5708 0" damping="0.2" />
                                                 <geom pos="-0.00520945 0 -0.0295442" type="mesh" mesh="LARM_LITTLE1_LINK_mesh" />
                                             </body>
                                         </body>
                                     </body>
                                     <body name="LARM_MIDDLE3_LINK" pos="0.0141209 -0.017 -0.101883">
                                         <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                        <joint name="LARM_MIDDLE3_JOINT_R" pos="0 0 0" axis="1 0 0" limited="true" range="-1.5708 0" damping="0.2" />
                                         <geom pos="0.0141209 -0.017 -0.101883" type="mesh" mesh="LARM_MIDDLE3_LINK_mesh" />
                                         <body name="LARM_MIDDLE2_LINK" pos="0 0 -0.04">
                                             <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                            <joint name="LARM_MIDDLE2_JOINT_R" pos="0 0 0" axis="1 0 0" limited="true" range="-1.5708 0" damping="0.2" />
                                             <geom pos="0 0 -0.04" type="mesh" mesh="LARM_MIDDLE2_LINK_mesh" />
                                             <body name="LARM_MIDDLE1_LINK" pos="0 0 -0.03">
                                                 <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                                <joint name="LARM_MIDDLE1_JOINT_R" pos="0 0 0" axis="1 0 0" limited="true" range="-1.5708 0" damping="0.2" />
                                                 <geom pos="0 0 -0.03" type="mesh" mesh="LARM_MIDDLE1_LINK_mesh" />
                                             </body>
                                         </body>
                                     </body>
                                     <body name="LARM_RING3_LINK" pos="-0.00671263 -0.017 -0.100974">
                                         <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                        <joint name="LARM_RING3_JOINT_R" pos="0 0 0" axis="0.996195 0 -0.0871557" limited="true" range="-1.5708 0" damping="0.2" />
                                         <geom pos="-0.00671263 -0.017 -0.100974" type="mesh" mesh="LARM_RING3_LINK_mesh" />
                                         <body name="LARM_RING2_LINK" pos="-0.00348623 0 -0.0398478">
                                             <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                            <joint name="LARM_RING2_JOINT_R" pos="0 0 0" axis="0.996195 0 -0.0871557" limited="true" range="-1.5708 0" damping="0.2" />
                                             <geom pos="-0.00348623 0 -0.0398478" type="mesh" mesh="LARM_RING2_LINK_mesh" />
                                             <body name="LARM_RING1_LINK" pos="-0.00261467 0 -0.0298858">
                                                 <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                                <joint name="LARM_RING1_JOINT_R" pos="0 0 0" axis="0.996195 0 -0.0871557" limited="true" range="-1.5708 0" damping="0.2" />
                                                 <geom pos="-0.00261467 0 -0.0298858" type="mesh" mesh="LARM_RING1_LINK_mesh" />
                                             </body>
                                         </body>
                                     </body>
                                     <body name="LARM_THUMB4_LINK" pos="0.0299678 -0.006 -0.0497134">
                                         <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                        <joint name="LARM_THUMB4_JOINT_Y" pos="0 0 0" axis="-0.0871557 0 0.996195" limited="true" range="-2.09439 0" damping="0.2" />
                                         <geom pos="0.0299678 -0.006 -0.0497134" type="mesh" mesh="LARM_THUMB4_LINK_mesh" />
                                         <body name="LARM_THUMB3_LINK" pos="0 0 0">
                                             <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                            <joint name="LARM_THUMB3_JOINT_Y" pos="0 0 0" axis="0 1 0" limited="true" range="0 0.872664" damping="0.2" />
                                             <geom type="mesh" mesh="LARM_THUMB3_LINK_mesh" />
                                             <body name="LARM_THUMB2_LINK" pos="0.0360228 -0.011 -0.0109274">
                                                 <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                                <joint name="LARM_THUMB2_JOINT_Y" pos="0 0 0" axis="0.405582 -0.70711 0.579223" limited="true" range="-1.5708 0" damping="0.2" />
                                                 <geom pos="0.0360228 -0.011 -0.0109274" type="mesh" mesh="LARM_THUMB2_LINK_mesh" />
                                                 <body name="LARM_THUMB1_LINK" pos="0.0245746 0 -0.0172073">
                                                     <inertial pos="0 0 0" quat="0.820473 0.339851 -0.17592 0.424708" mass="0.001" diaginertia="0.001 0.001 0.001" />
-                                                    <joint name="LARM_THUMB1_JOINT_Y" pos="0 0 0" axis="0.405582 -0.70711 0.579223" limited="true" range="-1.5708 0" damping="0.2" />
                                                     <geom pos="0.0245746 0 -0.0172073" type="mesh" mesh="LARM_THUMB1_LINK_mesh" />
                                                 </body>
                                             </body>
